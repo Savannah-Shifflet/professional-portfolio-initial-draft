@@ -64,12 +64,27 @@ header {
     .container {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
     }
 
     .container h1 {
         width: auto;
         padding-left: 50px;
         padding-right: 5px;
+    }
+
+    .container nav {
+        display: flex;
+        flex-direction: row; 
+        flex-wrap: nowrap;
+    }
+
+    .container a {
+        width: auto; 
+        color: var(--light);
+        background-color: var(--dark);
+        margin: 10px;
     }
 }
 /* @media screen and (min-width: 900px) {
