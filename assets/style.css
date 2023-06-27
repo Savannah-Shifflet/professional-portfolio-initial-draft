@@ -4,3 +4,43 @@
     --dark: #354f52;
     --background: #fefae0;
 }
+
+/* mobile first design - have titles on top of section when small, but when larger, have the titles animate/move to left side of page
+
+need one flexbox container for each of the three sections: .container with flex-direction column but when gets larger, flex-direction row */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0.625rem; 
+    color: var(--dark);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.5rem;
+}
+
+h3 {
+    font-size: 3.0rem;
+}
+
+h4 {
+    font-size: 2.5rem;
+}
+
+h5 {
+    font-size: 2.0rem;
+}
+
+h6 {
+    font-size: 1.5rem;
+}
