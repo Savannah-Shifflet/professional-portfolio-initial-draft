@@ -27,6 +27,31 @@ h6 {
     align-items: center; 
 }
 
+header {
+    background-color: var(--dark);
+}
+
+.container h1 {
+    background-color: var(--light);
+    width: 100%;
+    text-align: center;
+}
+
+.container nav {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.container a {
+    width: 100%;
+    color: var(--dark);
+    background-color: var(--accent);
+    text-decoration: none;
+    text-align: center;
+    margin: 3px;
+}
+
 #hero {
     width: 100%;
     height: 200px;
@@ -34,3 +59,21 @@ h6 {
     background-position: 0 95%;
     background-size: cover;
 }
+
+@media screen and (min-width: 900px) {
+    .container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .container h1 {
+        width: auto;
+        padding-left: 50px;
+        padding-right: 5px;
+    }
+}
+/* @media screen and (min-width: 900px) {
+    #hero {
+        height: 50px; 
+    }
+} */
