@@ -1,0 +1,36 @@
+:root {
+    --light: #709775;
+    --accent: #ccd5ae;
+    --dark: #354f52;
+    --background: #fefae0;
+}
+
+/* mobile first design - have titles on top of section when small, but when larger, have the titles animate/move to left side of page
+
+need one flexbox container for each of the three sections: .container with flex-direction column but when gets larger, flex-direction row */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0.625rem; 
+    color: var(--dark);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+#hero {
+    width: 100%;
+    height: 200px;
+    background-image: url("../images/hill-country-camera-c9_dagULOMw-unsplash.jpg") ;
+    background-position: 0 95%;
+    background-size: cover;
+}
