@@ -21,6 +21,10 @@ h6 {
     line-height: 1.1;
 }
 
+body {
+    background-color: var(--background);
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -60,6 +64,17 @@ header {
     background-size: cover;
 }
 
+#about-me p{
+    margin: 10px;
+    text-align: left;
+}
+
+#about-me img {
+    width: 20%;
+    border-radius:100px;
+    margin: 10px;
+}
+
 @media screen and (min-width: 900px) {
     .container {
         display: flex;
@@ -85,6 +100,10 @@ header {
         color: var(--light);
         background-color: var(--dark);
         margin: 10px;
+    }
+
+    #about-me img {
+        width: 110px;
     }
 }
 /* @media screen and (min-width: 900px) {
