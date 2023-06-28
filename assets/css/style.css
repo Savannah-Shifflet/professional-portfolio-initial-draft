@@ -72,6 +72,9 @@ header {
     min-width: 200px;
 }
 
+#cards-container a:hover {
+    border-width: 5px;
+}
 
 #cards-container a ul {
     padding-left: 10%;
@@ -113,6 +116,10 @@ header {
     flex: 0 0 auto;
 }
 
+.contact-links:hover,
+.nav-links:hover {
+    text-decoration: underline;
+}
 
 #hero {
     width: 100%;
