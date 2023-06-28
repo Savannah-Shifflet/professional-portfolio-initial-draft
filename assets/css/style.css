@@ -1,3 +1,4 @@
+/* Page colors identified below  */
 :root {
     --light: #709775;
     --accent: #ccd5ae;
@@ -5,6 +6,7 @@
     --background: #fefae0;
 }
 
+/* all headers given basic attributes */
 h1,
 h2,
 h3,
@@ -21,31 +23,37 @@ body {
     background-color: var(--background);
 }
 
+/* override link attributes to have no underline and be in the page's colors  */
 a{
     text-decoration: none;
     color: var(--dark);
-}
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
 }
 
 header {
     background-color: var(--dark);
 }
 
-.container h1 {
+/*Using mobile-first design, had header take up full top line and be centered. */
+h1 {
     background-color: var(--light);
     width: 100%;
     text-align: center;
 }
 
+/* Created a basic flex box container for each main section of the document: header, about me, work, contact information. Used mobile-first design methods so had the flex-direction as column here and change to row later in CSS code using a media query. */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+/* Using mobile-first design, wanted the nav bar to be stacked in a column */
 .container nav {
     display: flex;
     flex-wrap: wrap;
 }
 
+/* Using mobile-first design, when the nav links where stacked in a column, I wanted them to have a different background and rounded edges and centered below h1*/
 .container .nav-links {
     width: 100%;
     color: var(--dark);
@@ -55,6 +63,36 @@ header {
     border-radius: 500px;
 }
 
+/* Underlines the links when someone hovers over them in both the navigation and contact-me section */
+.contact-links:hover,
+.nav-links:hover {
+    text-decoration: underline;
+}
+
+/* An image of the Austin skyline for the hero image that will show the correct piece of the picture and respond appropriately to page size using background-position and background-size */
+#hero {
+    width: 100%;
+    height: 200px;
+    background-image: url("../images/hill-country-camera-c9_dagULOMw-unsplash.jpg") ;
+    background-position: 0 95%;
+    background-size: cover;
+}
+
+
+#about-me p{
+    margin: 30px;
+    text-align: left;
+    max-width: 80%;
+}
+
+/* This allows the image to respond to smaller screen sizes and formats the shape */
+#about-me img {
+    width: 20%;
+    border-radius:100px;
+    margin: 10px;
+}
+
+/* Created a container for the cards that display my work in the work section so that the cards respond appropriately to the page size */
 #cards-container {
     display: flex;
     flex-wrap: wrap;
@@ -63,19 +101,21 @@ header {
     color: var(--dark);
 }
 
+/* below provides basic formatting in addition to setting the flex properties for the individual cards. The minimum width ensures that the cards wrap to the next line before there is not room for the subtitle within the card while still allowing the card to shrink enough for small phones. */
 #cards-container a{
     background-image: linear-gradient( to bottom right, var(--light), var(--dark)) ;
     border: var(--accent) solid;
     border-radius: 30px;
-    position: relative;
     flex: 1 1 auto;
     min-width: 200px;
 }
 
+/* creates highlight effect when someone hovers over a card */
 #cards-container a:hover {
     border-width: 5px;
 }
 
+/* Below ensures the subtitles on the card are positioned appropriately, styled in a consistent manner with the rest of the page, and that the subtitles shrink with the page size */
 #cards-container a ul {
     padding-left: 10%;
     padding-right: 5%;
@@ -87,26 +127,27 @@ header {
     border-radius: 0 5px 5px 0;
 }
 
+/* Decreases the margin size of the heading on the cards so that the subtitle below it is not at an awkward position*/
 #cards-container a ul h3 {
     margin-bottom: 5px;
 }
 
+/* This id ensures that the first card stays larger than the other cards */
 #first-card {
     width: 80%;
     flex: 2 2 auto;
     padding-top: 90px;
 } 
 
-
-.container .contact-container {
+/* created a container for the links in the contact me section so that they responded to the mobile layout in an organized way that is spaced out across the page */
+#contact-container {
     display: flex;
-    flex-direction: row; 
-    justify-content: space-around;
-    align-content: center;
+    justify-content: space-evenly;
+    width: 100%;
     flex-wrap: wrap;
 }
 
-.container .contact-links {
+#contact-container .contact-links {
     width: fit-content;
     color: var(--dark);
     background-color: var(--background);
@@ -116,32 +157,9 @@ header {
     flex: 0 0 auto;
 }
 
-.contact-links:hover,
-.nav-links:hover {
-    text-decoration: underline;
-}
-
-#hero {
-    width: 100%;
-    height: 200px;
-    background-image: url("../images/hill-country-camera-c9_dagULOMw-unsplash.jpg") ;
-    background-position: 0 95%;
-    background-size: cover;
-}
-
-#about-me p{
-    margin: 30px;
-    text-align: left;
-    max-width: 80%;
-}
-
-#about-me img {
-    width: 20%;
-    border-radius:100px;
-    margin: 10px;
-}
-
+/* Utilized a media query to apply settings for when the page size increased above a standard tablet size  */
 @media screen and (min-width: 768px) {
+    /* This changes the flex-direction from column to row. */
     .container {
         display: flex;
         flex-direction: row;
@@ -149,26 +167,26 @@ header {
         align-items: flex-start;
     }
 
+    /* The footer and header needed a different alignment*/
     .align-center {
         align-items: center;
     }
 
-    .justify-between {
-        justify-content: space-between;
-    }
-
+    /* This changes the width from 100% in the mobile design above to an appropriate width to sit on the left side of the page */
     .container h1 {
         width: auto;
         padding-left: 50px;
         padding-right: 5px;
     }
 
+    /* This removes the settings from the nav links in the mobile design to sit horizontally on the page */
     .container nav {
         display: flex;
         flex-direction: row; 
         flex-wrap: nowrap;
     }
 
+    /* This changes the colors and design of the nav links when in a larger screen */
     .container .nav-links {
         width: auto; 
         color: var(--light);
@@ -176,6 +194,7 @@ header {
         margin: 10px;
     }
 
+    /* This ensures the headings for each section sit on the left side of the page and the line automatically responds to fill length of the full section  */
     .container h2 {
         align-self: stretch;
         margin-left: 200px;
@@ -186,41 +205,40 @@ header {
         flex-shrink: 0; 
     }
 
-    .container .contact-container {
+    /* Ensures the contact links are in the correct positioning and have space in between */
+    .container #contact-container {
         display: flex;
         justify-content: space-between;
         width: 60%;
     }
+
+    /* Increases the font size of the contact links and allows them to respond to the page size*/
     .container .contact-links {
         font-size: 1.25em;
         flex: 0 0 auto;
     }
     
+    /* The header needed a different justification so that the nav links show up on the right side of the page */
+    #justify-between {
+        justify-content: space-between;
+    }
+
+    /* This ensures the cards sit in line with the heading  */
     #cards-container {
         margin-left: 50px;
         margin-top: 0.625rem;
         padding: 10px;
     }
 
-    #cards-container a{
-        min-width: 200px;
-    }
-
+    /* This ensures the first card doesn't get too large when the screen size expands while still remaining larger than the other cards */
     #first-card {
         max-width: 700px;
         flex-grow: 2; 
     } 
 
+    /* This ensures the image on the page doesn't get too large */
     #about-me img {
         width: 110px;
     }
 
-    #about-me p {
-        max-width: 80%;
-    }
 }
-/* @media screen and (min-width: 900px) {
-    #hero {
-        height: 50px; 
-    }
-} */
