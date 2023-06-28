@@ -5,10 +5,6 @@
     --background: #fefae0;
 }
 
-/* mobile first design - have titles on top of section when small, but when larger, have the titles animate/move to left side of page
-
-need one flexbox container for each of the three sections: .container with flex-direction column but when gets larger, flex-direction row */
-
 h1,
 h2,
 h3,
@@ -25,6 +21,10 @@ body {
     background-color: var(--background);
 }
 
+a{
+    text-decoration: none;
+    color: var(--dark);
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -46,11 +46,10 @@ header {
     flex-wrap: wrap;
 }
 
-.container a {
+.container .nav-links {
     width: 100%;
     color: var(--dark);
     background-color: var(--accent);
-    text-decoration: none;
     text-align: center;
     margin: 3px;
     border-radius: 500px;
@@ -60,18 +59,40 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly; 
-    align-self: center;
+    gap: 10px;
+    color: var(--dark);
 }
+
 #cards-container div{
     background-image: linear-gradient( to bottom right, var(--light), var(--dark)) ;
-    /* max-width: 60%; */
-    /* max-height: 30%; */
+    border: var(--accent) solid;
+    border-radius: 30px;
+    position: relative;
+    flex: 1 1 auto;
+    min-width: 200px;
+}
+
+#cards-container div ul {
+    padding-left: 10%;
+    padding-right: 5%;
+    max-width: fit-content;
+    text-align: right;
+    background-color: var(--accent);
+    list-style-type: none;
+    flex-shrink: 1;
+    border-radius: 0 5px 5px 0;
+}
+
+#cards-container div ul h3 {
+    margin-bottom: 5px;
 }
 
 #first-card {
-    width: 100%;
-    flex-grow: 2; 
+    width: 80%;
+    flex: 2 2 auto;
+    padding-top: 90px;
 } 
+
 
 .container .contact-container {
     display: flex;
@@ -87,6 +108,7 @@ header {
     background-color: var(--background);
     font-weight: bold;
     text-align: center;
+    margin: 3px;
     flex: 0 0 auto;
 }
 
@@ -102,7 +124,7 @@ header {
 #about-me p{
     margin: 30px;
     text-align: left;
-    max-width: 50%;
+    max-width: 80%;
 }
 
 #about-me img {
@@ -139,7 +161,7 @@ header {
         flex-wrap: nowrap;
     }
 
-    .container a {
+    .container .nav-links {
         width: auto; 
         color: var(--light);
         background-color: var(--dark);
@@ -155,7 +177,7 @@ header {
         border-right: var(--light) solid;
         flex-shrink: 0; 
     }
-    
+
     .container .contact-container {
         display: flex;
         justify-content: space-between;
@@ -165,12 +187,32 @@ header {
         font-size: 1.25em;
         flex: 0 0 auto;
     }
-
+    
     #cards-container {
         margin-left: 50px;
+        margin-top: 0.625rem;
+        padding: 10px;
     }
+
+    #cards-container div{
+        min-width: 200px;
+    }
+    #cards-container div ul a{
+        background-color: var(--accent);
+        text-align: right;
+    }
+
+    #first-card {
+        max-width: 700px;
+        flex-grow: 2; 
+    } 
+
     #about-me img {
         width: 110px;
+    }
+
+    #about-me p {
+        max-width: 80%;
     }
 }
 /* @media screen and (min-width: 900px) {
