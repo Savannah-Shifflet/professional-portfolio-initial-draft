@@ -41,7 +41,7 @@ header {
     text-align: center;
 }
 
-.container nav {
+.container .links {
     display: flex;
     flex-wrap: wrap;
 }
