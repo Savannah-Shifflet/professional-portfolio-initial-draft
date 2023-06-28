@@ -56,15 +56,16 @@ header {
     border-radius: 500px;
 }
 
+.container .cards {
+
+}
+
 .container .contact-container {
     display: flex;
     flex-direction: row; 
     justify-content: space-around;
     align-content: center;
     flex-wrap: wrap;
-    /* width: 100%; */
-    /* height: fit-content; */
-    /* margin: 0 5%; */
 }
 
 .container .contact-links {
