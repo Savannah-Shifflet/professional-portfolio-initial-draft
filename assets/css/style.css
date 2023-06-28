@@ -56,9 +56,20 @@ header {
     border-radius: 500px;
 }
 
-.container .cards {
-
+#cards-container {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
 }
+#cards-container div{
+    background-image: linear-gradient( to bottom right, var(--light), var(--dark)) ;
+    /* max-width: 60%; */
+    /* max-height: 30%; */
+}
+
+#first-card {
+    flex-grow: 2; 
+} 
 
 .container .contact-container {
     display: flex;
