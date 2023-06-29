@@ -10,9 +10,9 @@ N/A
 
 ## Usage
 
-The page can be viewed [here]() to learn more about my professional experience. Below is a screenshot of the page. 
+The page can be viewed [here](https://savannah-shifflet.github.io/professional-portfolio/) to learn more about my professional experience. Below is a screenshot of the page. 
 
-![Screenshot of Savannah Shifflet's professional portfolio](assets/images/screenshot.png)
+![Screenshot of Savannah Shifflet's professional portfolio](assets/images/screencapture-savannah-shifflet-github-io-professional-portfolio.png)
 
 ## Credits
 
