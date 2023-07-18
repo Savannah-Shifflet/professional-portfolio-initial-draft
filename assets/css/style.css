@@ -4,6 +4,7 @@
     --accent: #ccd5ae;
     --dark: #354f52;
     --background: #fefae0;
+    --gradient: linear-gradient( to bottom right, var(--light), var(--dark)) ;
 }
 
 /* all headers given basic attributes */
@@ -102,21 +103,63 @@ h1 {
 }
 
 /* below provides basic formatting in addition to setting the flex properties for the individual cards. The minimum width ensures that the cards wrap to the next line before there is not room for the subtitle within the card while still allowing the card to shrink enough for small phones. */
-#cards-container a{
-    background-image: linear-gradient( to bottom right, var(--light), var(--dark)) ;
+#cards-container .cards{
     border: var(--accent) solid;
     border-radius: 30px;
     flex: 1 1 auto;
     min-width: 200px;
+    background-position: top; 
+    background-size: cover;
+    position: relative;
+}
+
+/* card background images */
+.background-img:before{
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+    border-radius: 25px;
+    z-index:-2;
+    background-position: top; 
+    background-size: cover;
+}
+#dnd-img:before{
+    background-image: url(../images/dndQuestforGlorySS.png); 
+}
+
+#weather-img:before{
+    background-image: url(../images/weather-dashboard.png); 
+}
+
+#coding-img:before{
+    background-image: url(../images/coding-quiz.png); 
+}
+
+/* card background image overlay */
+.background-overlay:before{
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: var(--gradient);
+    opacity: 0.75;
+    border-radius: 25px;
+    z-index: -1;
 }
 
 /* creates highlight effect when someone hovers over a card */
-#cards-container a:hover {
+#cards-container .cards:hover {
     border-width: 5px;
 }
 
 /* Below ensures the subtitles on the card are positioned appropriately, styled in a consistent manner with the rest of the page, and that the subtitles shrink with the page size */
-#cards-container a ul {
+#cards-container .cards ul {
     padding-left: 10%;
     padding-right: 5%;
     max-width: fit-content;
@@ -128,7 +171,7 @@ h1 {
 }
 
 /* Decreases the margin size of the heading on the cards so that the subtitle below it is not at an awkward position*/
-#cards-container a ul h3 {
+#cards-container .cards ul h3 {
     margin-bottom: 5px;
 }
 
